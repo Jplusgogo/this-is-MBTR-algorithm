@@ -71,6 +71,23 @@ def main():
 
     model = MBTR().to(device)
 
+    # 这里是载入与预训练权重，使用迁移学习的方法，不用的话注释掉就可，不影响
+    model_weight_path = "./weights/mbtr_tr_base.pth"
+    assert os.path.exists(model_weight_path), "file {} dose not exist.".format(model_weight_path)
+    model.load_state_dict(torch.load(model_weight_path, map_location=device))
+
+    #冻结之前的参数，只训练最后的全连接层
+    for param in model.layer1.parameters():
+        param.requires_grad = False
+    for param in model.layer2.parameters():
+        param.requires_grad = False
+    for param in model.layer3.parameters():
+        param.requires_grad = False
+    for param in model.layer4.parameters():
+        param.requires_grad = False
+    for param in model.layer5.parameters():
+        param.requires_grad = False
+
     # 将模型写入tensorboard
     init_img = torch.zeros((1, 3, 256, 256), device=device)
     tb_writer.add_graph(model, init_img)
@@ -85,7 +102,7 @@ def main():
     best_acc = 0.0
 
     # 这边就是保存你的训练模型,这边用的是 torch使用较多的 .pth文件形式保存，你自己命名就行
-    save_path = './mbtr-1.pth'
+    save_path = './mbtr.pth'
     train_steps = len(train_loader)
     for epoch in range(epochs):
         # train
