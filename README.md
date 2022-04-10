@@ -26,8 +26,8 @@ model_mbtr: 这是mbtr算法的建模。
 
 train_cifar10: 这是使用mbtr算法对cifar10标准数据集进行训练的脚本。
 
-train_model_mbtr: 这是使用mbtr对你自己载入的数据集进行训练的脚本。
+********train_model_mbtr: 这是使用mbtr对你自己载入的数据集进行训练的脚本。
 
-grad_cam_mbtr_torch: 这是热力分布实现的脚本。
+***grad_cam_mbtr_torch: 这是热力分布实现的脚本。
 
-tensorflow实现版本在tensor文件中，我发现torch的bug较少，相比于tensor更合适一些。
+**tensorflow实现版本在tensor文件中，我发现torch的bug较少，相比于tensor更合适一些。
