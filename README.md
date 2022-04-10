@@ -19,6 +19,7 @@ grad_cam_mbtr_torch: This is the script for the thermal distribution implementat
 
 关于数据集分类方法：data_split文件稍后我会上传，用的是wz大神的方法。
 
+'''
 model_mbtr: 这是mbtr算法的建模
 
 train_cifar10: 这是使用mbtr算法对cifar10标准数据集进行训练的脚本
@@ -26,3 +27,4 @@ train_cifar10: 这是使用mbtr算法对cifar10标准数据集进行训练的脚
 train_model_mbtr: 这是使用mbtr对你自己载入的数据集进行训练的脚本
 
 grad_cam_mbtr_torch: 这是热力分布实现的脚本
+'''
