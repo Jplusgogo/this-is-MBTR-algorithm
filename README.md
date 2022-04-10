@@ -13,7 +13,7 @@ train_model_mbtr: This is the script to train on your own loaded dataset using m
 
 grad_cam_mbtr_torch: This is the script for the thermal distribution implementation.
 
-The tensorflow ver. is in the "tensor" file. I found that torch has fewer bugs, which is more suitable than tensor.
+***The tensorflow ver. is in the "tensor" file. I found that torch has fewer bugs, which is more suitable than tensor.***
 
 # 中文注释
 ## 这是MBTR算法的实现文件。
