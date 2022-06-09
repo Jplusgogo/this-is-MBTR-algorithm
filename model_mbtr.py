@@ -156,7 +156,7 @@ class MBTRBlock(nn.Module):
         return x
 
 
-class MBTR(nn.Module):
+class MB_TR(nn.Module):
     def __init__(self, dims, channels, expansion=4, patch_size=(2, 2), num_classes=1000):
         super(MBTR, self).__init__()
         depth = [2, 4, 3]
@@ -221,4 +221,4 @@ class MBTR(nn.Module):
 def MBTR():
     dims = [96, 120, 144]
     channels = [16, 32, 48, 48, 64, 64, 80, 80, 96, 96, 384]
-    return MBTR(dims, channels, num_classes=1000)
+    return MB_TR(dims, channels, num_classes=1000)
